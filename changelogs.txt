@@ -131,7 +131,10 @@ Setelah Rilis Versi NASA
 
 #1.0.0
 - Initial Release
-- Memperbaiki Order DataTables Pada file 'data.html'
+- Memperbaiki Order DataTables Pada File 'data.html'
 
 #1.0.1
 - Memperbaiki README
+
+#1.0.2
+- Memperbaiki Order DataTables Pada File 'data.html'
