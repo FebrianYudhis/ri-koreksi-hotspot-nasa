@@ -1,0 +1,134 @@
+#1.0.0
+- Initial Komit
+
+#1.1.0
+- Menambahkan Peta Agar Dapat Dilakukan Pengecekan Hotspot
+
+#1.2.0
+- Memperbaiki Struktur Aplikasi
+- Menambahkan Inputan File
+
+#1.3.0
+- Menambahkan Sweetalert2
+
+#1.4.0
+- Menyelesaikan Fitur Upload File
+
+#1.4.1
+- Menambahkan Tampilan Kembali Ke Menu Utama
+- Memberikan Keterangan Loading Data
+
+#1.5.0
+- Mengupdate Data GeoJSON Desa Kelurahan
+- Merapikan GeoJSON Dengan Layer Group
+
+#1.6.0
+- Membuat Struktur Aplikasi Baru
+
+#1.6.1
+- Mengganti Cara Pengambilan Data
+
+#1.6.2
+- Menambahkan Toastify
+
+#1.6.3
+- Menghapus Dependensi Library Turf
+
+#1.7.0
+- Memperbaiki Logika Program
+
+#1.7.1
+- Memperbaiki Bug Multi Polygon
+
+#1.8.0
+- Menambahkan Keterangan Kabupaten Koreksi Pada Tabel Data dan Properti GeoJSON Pada Peta
+- Menambahkan Dua Parameter Baru, Yaitu "all" Untuk Menampilkan Semua Hotspot Pada Peta dan Parameter "radiusHotspot" Untuk Mengatur Ukuran Titik Hotspot
+
+#1.8.1
+- Menambahkan Menu Untuk Menampilkan Semua Data Hotspot Pada Peta Leaflet
+- Menambahkan Order Kolom Datatables
+- Menambahkan Searchable Kolom Datatables
+
+#1.8.2
+- Menambahkan GeoJSON Kabupaten
+- Menambahkan Style GeoJSON Kabupaten dan DesaKelurahan
+
+#1.8.3
+- Menambahkan Basemap Layers
+
+#1.9.0
+- Menambahkan Fitur Opsi
+- Menghapus Parameter "radiusHotspot", Kemudian Memindahkan Ke Menu Opsi
+
+#1.9.1
+- Memindahkan Inline Javascipt Pada File "peta.html" Ke File "peta-app.js"
+
+#1.9.2
+- Menambahkan Opsi Baru Yaitu "Garis Administrasi Kabupaten" dan "Garis Administrasi Desa Kelurahan"
+
+#1.10.0
+- Menambahkan Keterangan Total Titik Panas
+
+#1.10.1
+- Menambahkan Legenda Titik Panas
+
+#1.10.2
+- Menghapus Inputan Radius Hotspot Ketika Tidak Menampilkan Titik Panas Keseluruhan
+
+#1.10.3
+- Memperbaiki Bug Ketika Pilihan Salah Satu Hotspot atau Keseluruhan Hotspot
+
+#1.10.4
+- Memperbaiki Struktur Aplikasi
+- Memperbaiki Bind Popup Untuk Data Satu Titik Panas
+
+#1.10.5
+- Menambahkan Href Untuk Mengambil Data
+
+#1.11.0
+- Menambahkan Opsi Baru Yaitu "Pilihan Daerah" Untuk Seleksi Hotspot Didalam Kabupaten Tertentu Ketika Semua Data Hotspot Diaktifkan
+
+#1.12.0
+- Initial Release Untuk Versi NASA
+- Menambahkan Endpoint Kasar Untuk Mengambil Data Dari NASA
+
+#1.12.1
+- Menambahkan Package Carbon
+- Menyelesaikan Sumber Pertama Data NASA
+
+#1.12.2
+- Menyelesaikan Sumber Kedua Data NASA
+
+#1.12.3
+- Menyelesaikan Sumber Ketiga Data NASA
+
+#1.13.0
+- Menyelesaikan Menu Ambil Data Versi NASA
+
+#1.13.1
+- Memberikan Keterangan Pada Form Ambil Data NASA
+- Mengganti API Key NASA
+
+#1.14.0
+- Menyelesaikan Logika Koreksi Data NASA
+- Menyesuaikan Tampilan
+
+#1.14.1
+- Memperbaiki Nama Provinsi Awal
+- Memperbaiki JSON Kejadian Api
+- Memperbaiki Bug Lokasi Tidak Terdeteksi
+- Menambahkan Keterangan Provinsi Pada Endpoint Terakhir
+
+#1.14.2
+- Menambahkan Kejadian Api Pada File 'data.html' dan 'peta-app.js'
+
+#1.14.3
+- Menambahkan Sweetalert2 Ketika Data Yang Diambil Kosong
+
+
+==============================
+Setelah Rilis Versi NASA
+
+#1.0.0
+- Initial Release
+- Memperbaiki Order DataTables Pada file 'data.html'

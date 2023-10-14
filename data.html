@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/datatables.min.css">
+    <title>Data Hotspot</title>
+</head>
+
+<body>
+    <div class="container-fluid mt-4">
+        <div class="container">
+            <div class="card mb-4">
+                <div class="card-header">
+                    Menu
+                </div>
+                <div class="card-body">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-6 col-lg-6 mb-2">
+                                    <a href="/" class="btn btn-primary w-100">Menu Utama</a>
+                                </div>
+                                <div class="col-sm-12 col-md-6 col-lg-6 mb-2">
+                                    <a href="/peta.html?all=true" class="btn btn-info w-100" target="_blank">Lihat Semua
+                                        Data Dipeta</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h1 class="text-center" id="notifikasiLoading">Loading Data</h1>
+        <table id="hasilTabel" class="table table-bordered table-striped" style="width:100%; display: none;"></table>
+    </div>
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/datatables.min.js"></script>
+    <script type="text/javascript">
+        fetch('DesaKelurahan.json')
+            .then(response => response.json())
+            .then(geoJson => {
+                return fetch('HotspotKoreksi.json')
+                    .then(response => response.json())
+                    .then(hotspotData => {
+                        $(document).ready(function () {
+                            $('#hasilTabel').DataTable({
+                                data: hotspotData,
+                                order: [[0, 'asc'], [1, 'asc']],
+                                columnDefs: [
+                                    { "searchable": false, "targets": [0, 1, 2, 3, 4, 5, 6, 8, 9] },
+                                ],
+                                dom: 'lBfrtip',
+                                buttons: [
+                                    {
+                                        extend: 'colvis',
+                                        text: 'Pilih Kolom'
+                                    },
+                                    {
+                                        extend: 'print',
+                                        exportOptions: {
+                                            columns: ':visible'
+                                        },
+                                        text: 'Cetak Tabel',
+                                        title: "Data Hotspot Kotawaringin Timur"
+                                    },
+                                    {
+                                        extend: 'copy',
+                                        exportOptions: {
+                                            columns: ':visible'
+                                        },
+                                        text: 'Copy Ke Clipboard',
+                                    },
+                                    {
+                                        extend: 'csv',
+                                        exportOptions: {
+                                            columns: ':visible'
+                                        },
+                                        text: 'Download CSV',
+                                        title: "Data Hotspot Kotawaringin Timur"
+                                    },
+                                    {
+                                        extend: 'excel',
+                                        exportOptions: {
+                                            columns: ':visible'
+                                        },
+                                        text: 'Download Excel',
+                                        title: "Data Hotspot Kotawaringin Timur"
+                                    }
+                                ],
+                                columns: [
+                                    { data: 'Asli.tanggal', title: 'Tanggal' },
+                                    { data: 'Asli.waktu', title: 'Waktu' },
+                                    { data: 'Asli.bujur', title: 'Bujur' },
+                                    { data: 'Asli.lintang', title: 'Lintang' },
+                                    { data: 'Asli.kepercayaan', title: 'Tingkat Kepercayaan' },
+                                    { data: 'Asli.satelit', title: 'Satelit' },
+                                    { data: 'Asli.kejadian_api', title: 'Kejadian Api' },
+                                    { data: 'Lokasi.namaKabupaten', title: 'Kabupaten' },
+                                    { data: 'Lokasi.namaKecamatan', title: 'Kecamatan' },
+                                    { data: 'Lokasi.namaKelurahan', title: 'Kelurahan / Desa' },
+                                    {
+                                        title: 'Aksi',
+                                        data: null,
+                                        render: function (data, type, row) {
+                                            var bujur = row.Asli.bujur;
+                                            var lintang = row.Asli.lintang;
+                                            return `<a href="peta.html?lat=${lintang}&long=${bujur}" class="btn btn-primary" target="_blank">Lihat di Peta</a>`;
+                                        }
+                                    }
+                                ]
+                            });
+
+                            $('#notifikasiLoading').hide();
+                            $('#hasilTabel').show();
+                        });
+                    });
+            })
+            .catch(error => {
+                $('#notifikasiLoading').html('Terjadi Kesalahan, Data Tidak Dapat Ditampilkan');
+            });
+    </script>
+</body>
+
+</html>

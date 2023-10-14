@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link rel="stylesheet"
+        href="https://unpkg.com/leaflet-groupedlayercontrol/dist/leaflet.groupedlayercontrol.min.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <title>Peta Titik Panas</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+
+    <div class="modal fade" id="opsi" tabindex="-1" aria-labelledby="opsiModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="opsiModalLabel">Opsi</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group mb-3" id="inputRadiusHotspot">
+                        <span class="input-group-text">Radius Hotspot : </span>
+                        <input type="number" class="form-control" placeholder="Masukkan Hanya Angka" id="radiusHotspot">
+                    </div>
+                    <div class="mb-3">
+                        <label for="garisKabupaten" class="form-label">Ukuran Garis Administrasi Kabupaten
+                            :</label>
+                        <input type="number" class="form-control" id="garisKabupaten"
+                            placeholder="Masukkan Hanya Angka">
+                    </div>
+                    <div class="mb-3">
+                        <label for="garisDesaKelurahan" class="form-label">Ukuran Garis Administrasi Desa / Kelurahan
+                            :</label>
+                        <input type="number" class="form-control" id="garisDesaKelurahan"
+                            placeholder="Masukkan Hanya Angka">
+                    </div>
+                    <div class="input-group mb-3" id="inputPilihanDaerah">
+                        <span class="input-group-text">Pilih Daerah : </span>
+                        <select class="form-select" id="pilihanDaerah">
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet-groupedlayercontrol/dist/leaflet.groupedlayercontrol.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/sweetalert2.js"></script>
+    <script src="assets/js/peta-app.js"></script>
+</body>
+
+</html>
