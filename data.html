@@ -45,7 +45,12 @@
             .then(response => response.json())
             .then(geoJson => {
                 return fetch('HotspotKoreksi.json')
-                    .then(response => response.json())
+                    .then(response => response.text())
+                    .then(text => {
+                        if (text.length > 0) {
+                            return JSON.parse(text);
+                        }
+                    })
                     .then(hotspotData => {
                         $(document).ready(function () {
                             $('#hasilTabel').DataTable({
